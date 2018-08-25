@@ -25,7 +25,11 @@ public class PanelServiceImpl implements PanelService {
   public void register(Panel panel) { 
     panelRepository.save(panel);
   }
-  
+
+  public Iterable<Panel> findAll() {
+      return panelRepository.findAll();
+  }
+
   public Panel findBySerial(String serial) {
     return panelRepository.findBySerial(serial);
   }

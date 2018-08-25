@@ -15,6 +15,6 @@ public interface PanelService {
    */
   
   void register(Panel panel);
-  
+  Iterable<Panel> findAll();
   Panel findBySerial(String serial);
 }

@@ -16,6 +16,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: "jacoco"
 apply plugin: "io.spring.dependency-management"
 apply plugin: 'org.springframework.boot'
@@ -37,6 +38,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('com.fasterxml.jackson.core:jackson-core')
+	compile('org.modelmapper:modelmapper:1.1.0')
 	testCompile('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.liquibase:liquibase-core')

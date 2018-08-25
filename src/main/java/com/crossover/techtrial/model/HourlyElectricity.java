@@ -1,5 +1,6 @@
 package com.crossover.techtrial.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -31,6 +32,8 @@ public class HourlyElectricity implements Serializable {
   Long id;
   
   @JsonIgnore
+  /* BUG FIXED: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String */
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
   @ManyToOne
   @JoinColumn(name = "panel_id", referencedColumnName = "id")
   Panel panel;
@@ -125,7 +128,4 @@ public class HourlyElectricity implements Serializable {
     return "HourlyElectricity [id=" + id + ", panel=" + panel + ", generatedElectricity="
         + generatedElectricity + ", readingAt=" + readingAt + "]";
   }
-  
-  
-  
 }
